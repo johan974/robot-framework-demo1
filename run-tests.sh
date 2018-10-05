@@ -1,1 +1,1 @@
-robot -d results tests/amazon.robot
+robot --console verbose -d results tests/amazon.robot
