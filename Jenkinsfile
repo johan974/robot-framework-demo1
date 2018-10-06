@@ -1,6 +1,5 @@
 pipeline {
     agent {
-        def pwd = pwd();
         docker {
             image 'ppodgorsek/robot-framework'
             args '-v ${WORKSPACE}/reports:/opt/robotframework/reports -v ${WORKSPACE}/tests:/opt/robotframework/tests -e BROWSER=chrome'
