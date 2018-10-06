@@ -1,0 +1,24 @@
+pipeline {
+    agent {
+        docker {
+            image 'manycoding/robotframework'
+        }
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: "master", url:'https://github.com/johan974/robot-framework-demo1.git'
+            }
+        }
+        stage('Test') {
+            steps{
+                sh 'chmod a+x Tests/run-tests.sh && ./Tests/run-tests.sh'
+            }
+        }
+    }
+    post {
+        always {
+            archive (includes: 'reports/*.html')
+        }
+    }
+}
