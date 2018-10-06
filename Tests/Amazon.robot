@@ -1,6 +1,5 @@
 *** Settings ***
 Documentation  This is some basic info about the whole suite
-Library  SeleniumLibrary
 
 # Copy/paste the line below into Terminal to execute:
 # pybot -d results tests/amazon.robot
