@@ -3,7 +3,7 @@ Documentation  This is some basic info about the whole suite
 
 # Copy/paste the line below into Terminal to execute:
 # pybot -d results tests/amazon.robot
-Library  Selenium2Library
+Library  SeleniumLibrary
 
 *** Variables ***
 
