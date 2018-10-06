@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test') {
             steps{
-                sh 'docker run -v ${PWD}/reports:/opt/robotframework/reports:Z -v ${PWD}/test:/opt/robotframework/tests:Z \
+                sh 'docker run -v ${PWD}/reports:/opt/robotframework/reports:Z -v ${PWD}/Tests:/opt/robotframework/tests:Z \
                             -e BROWSER=chrome ppodgorsek/robot-framework:latest'
             }
         }
