@@ -13,20 +13,6 @@ pipeline {
                 sh 'ls -l ${PWD}/reports'
             }
         }
-        stage('Publish') {
-            steps {
-                step([
-                    $class           : 'RobotPublisher',
-                    outputPath       : 'reports',
-                    passThreshold    : 100,
-                    unstableThreshold: 100,
-                    otherFiles       : '',
-                    reportFileName   : 'reports/report.html',
-                    logFileName      : 'reports/log.html',
-                    outputFileName   : 'reports/output.xml'
-                ])
-            }
-        }
     }
     post {
         always {
