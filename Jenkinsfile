@@ -21,9 +21,9 @@ pipeline {
                     passThreshold    : 100,
                     unstableThreshold: 100,
                     otherFiles       : '',
-                    reportFileName   : 'reports/*report*.html',
-                    logFileName      : 'reports/*log*.html',
-                    outputFileName   : 'reports/*output*.xml'
+                    reportFileName   : 'reports/report.html',
+                    logFileName      : 'reports/log.html',
+                    outputFileName   : 'reports/output.xml'
                 ])
             }
         }
