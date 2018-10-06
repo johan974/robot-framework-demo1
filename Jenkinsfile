@@ -16,7 +16,7 @@ pipeline {
             steps {
                 step([
                     $class           : 'RobotPublisher',
-                    outputPath       : 'reports/robotframework-report',
+                    outputPath       : 'reports',
                     passThreshold    : 100,
                     unstableThreshold: 100,
                     otherFiles       : '',
