@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'ppodgorsek/robot-framework'
-            args '-v ./reports:/opt/robotframework/reports -v ./tests:/opt/robotframework/tests'                        
+            args '-v `pwd`/reports:/opt/robotframework/reports -v `pwd`/tests:/opt/robotframework/tests -e BROWSER=chrome'
         }
     }
     stages {
