@@ -4,6 +4,7 @@ Library  SeleniumLibrary
 
 # Copy/paste the line below into Terminal to execute:
 # pybot -d results tests/amazon.robot
+Library  Selenium2Library
 
 *** Variables ***
 
