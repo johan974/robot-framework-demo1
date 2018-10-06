@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'ppodgorsek/robot-framework'
-            args '-v ${WORKSPACE}/reports:/opt/robotframework/reports -v ${WORKSPACE}/tests:/opt/robotframework/tests -e BROWSER=chrome'
-        }
-    }
+    agent any
     stages {
         stage('Checkout') {
             steps {
@@ -13,7 +8,8 @@ pipeline {
         }
         stage('Test') {
             steps{
-                sh 'run-tests.sh'
+                sh 'docker run -v ${PWD}/reports:/opt/robotframework/reports:Z -v ${PWD}/test:/opt/robotframework/tests:Z \
+                            -e BROWSER=chrome ppodgorsek/robot-framework:latest'
             }
         }
     }
