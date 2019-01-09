@@ -8,18 +8,18 @@ pipeline {
         }
         stage('Test') {
             steps{
-                PWD = ${WORKSPACE}
+                //PWD = ${WORKSPACE}
                 echo "Pwd = "
                 sh "pwd"
-                PWD2 = pwd();
-                echo "PWD = ${PWD} and pwd2 = ${PWD2}"
-                echo "ls of ${PWD}"
-                sh "ls ${PWD}"
-                echo "ls of ${PWD}/Tests"
-                sh "ls ${PWD}/Tests"
+                //PWD2 = pwd();
+                //echo "PWD = ${PWD} and pwd2 = ${PWD2}"
+                //echo "ls of ${PWD}"
+                //sh "ls ${PWD}"
+                echo "ls of ${WORKSPACE}/Tests"
+                sh "ls ${WORKSPACE}/Tests"
                 sh 'docker run -v ${WORKSPACE}/reports:/opt/robotframework/reports:Z -v ${WORKSPACE}/Tests:/opt/robotframework/tests:Z \
                             -e BROWSER=chrome ppodgorsek/robot-framework:latest'
-                sh 'ls -l ${PWD}/reports'
+                sh 'ls -l ${WORKSPACE}/reports'
             }
         }
     }
