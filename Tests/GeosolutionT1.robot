@@ -13,6 +13,7 @@ User must sign in to check out
     [Documentation]  Functional test of Geosolution
     [Tags]  Smoke
     Open Browser  http://localhost:8080  chrome
+    Capture Page Screenshot
     Wait Until Page Contains  Username
     Input Text  id=username  test
     Input Text  id=password  test
