@@ -7,7 +7,7 @@ pipeline {
             }
         }
         stage('Test') {
-            def PWD = pwd()
+            def PWD = ${WORKSPACE}
             steps{
                 echo "Pwd = "
                 sh "pwd"
