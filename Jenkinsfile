@@ -8,6 +8,7 @@ pipeline {
         }
         stage('Test') {
             steps{
+                echo "PWD = ${PWD}"
                 sh 'docker run -v ${PWD}/reports:/opt/robotframework/reports:Z -v ${PWD}/Tests:/opt/robotframework/tests:Z \
                             -e BROWSER=chrome ppodgorsek/robot-framework:latest'
                 sh 'ls -l ${PWD}/reports'

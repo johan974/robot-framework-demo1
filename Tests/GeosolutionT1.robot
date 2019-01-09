@@ -5,8 +5,6 @@ Documentation  This is some basic info about the whole suite
 # pybot -d results tests/amazon.robot
 Library  SeleniumLibrary
 
-Library  SeleniumLibrary
-
 *** Variables ***
 
 *** Test Cases ***
