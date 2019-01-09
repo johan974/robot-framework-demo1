@@ -7,7 +7,10 @@ pipeline {
             }
         }
         stage('Test') {
+            def PWD = pwd()
             steps{
+                echo "Pwd = "
+                sh "pwd"
                 echo "PWD = ${PWD}"
                 echo "ls of ${PWD}"
                 sh "ls ${PWD}"
