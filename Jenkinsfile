@@ -7,11 +7,12 @@ pipeline {
             }
         }
         stage('Test') {
-            def PWD = ${WORKSPACE}
             steps{
+                def PWD = ${WORKSPACE}
                 echo "Pwd = "
                 sh "pwd"
-                echo "PWD = ${PWD}"
+                def PWD2 = pwd();
+                echo "PWD = ${PWD} and pwd2 = ${PWD2}"
                 echo "ls of ${PWD}"
                 sh "ls ${PWD}"
                 echo "ls of ${PWD}/Tests"
