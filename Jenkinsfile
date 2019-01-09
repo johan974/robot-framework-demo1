@@ -8,16 +8,16 @@ pipeline {
         }
         stage('Test') {
             steps{
-                def PWD = ${WORKSPACE}
+                PWD = ${WORKSPACE}
                 echo "Pwd = "
                 sh "pwd"
-                def PWD2 = pwd();
+                PWD2 = pwd();
                 echo "PWD = ${PWD} and pwd2 = ${PWD2}"
                 echo "ls of ${PWD}"
                 sh "ls ${PWD}"
                 echo "ls of ${PWD}/Tests"
                 sh "ls ${PWD}/Tests"
-                sh 'docker run -v ${PWD}/reports:/opt/robotframework/reports:Z -v ${PWD}/Tests:/opt/robotframework/tests:Z \
+                sh 'docker run -v ${WORKSPACE}/reports:/opt/robotframework/reports:Z -v ${WORKSPACE}/Tests:/opt/robotframework/tests:Z \
                             -e BROWSER=chrome ppodgorsek/robot-framework:latest'
                 sh 'ls -l ${PWD}/reports'
             }
