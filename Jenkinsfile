@@ -11,7 +11,7 @@ pipeline {
                 echo "ls of ${WORKSPACE}/Tests"
                 sh "ls ${WORKSPACE}/Tests"
                 sh 'docker run -v //k/data/${WORKSPACE}/reports:/opt/robotframework/reports -v //k/data/${WORKSPACE}/Tests:/opt/robotframework/tests \
-                            -e BROWSER=chrome ppodgorsek/robot-framework:latest'
+                            --network=geosolutions2_geosolutionsnet -e BROWSER=chrome ppodgorsek/robot-framework:latest'
                 sh 'ls -l ${WORKSPACE}/reports'
                 echo "OK 3"
             }

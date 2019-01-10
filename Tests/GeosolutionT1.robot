@@ -12,7 +12,7 @@ Library  SeleniumLibrary
 User must sign in to check out
     [Documentation]  Functional test of Geosolution
     [Tags]  Smoke
-    Open Browser  http://127.0.0.1:8080  chrome
+    Open Browser  http://geosolutionapp:8080  chrome
     Capture Page Screenshot
     Wait Until Page Contains  Username
     Input Text  id=username  test
