@@ -6,12 +6,13 @@ Documentation  This is some basic info about the whole suite
 Library  SeleniumLibrary
 
 *** Variables ***
+${Browser}=  chrome
 
 *** Test Cases ***
 User must sign in to check out
     [Documentation]  This is some basic info about the test
     [Tags]  Smoke
-    Open Browser  http://www.amazon.com  chrome
+    Open Browser  http://www.amazon.com  ${Browser}
     Wait Until Page Contains  Hello, Sign in
     Input Text  id=twotabsearchtextbox  Ferrari 458
     #Click Button  xpath=//*[@id="nav-search"]/form/div[2]/div/input
